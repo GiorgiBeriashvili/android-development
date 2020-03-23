@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Authentication</string>
+    <string name="email_field">Email</string>
+    <string name="password_field">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="background_description">Background image that depicts mountains.</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password</string>
+</resources>

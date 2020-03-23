@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="field_drawable_padding">12dp</dimen>
+    <dimen name="field_horizontal_padding">12dp</dimen>
+    <dimen name="field_text_size">20sp</dimen>
+    <dimen name="text_view_text_size">16sp</dimen>
+    <dimen name="linear_layout_component_height">60dp</dimen>
+    <dimen name="button_text_size">22sp</dimen>
+</resources>
