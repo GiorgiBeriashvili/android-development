@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">User Profile</string>
+    <string name="full_name">%1$s %2$s</string>
+    <string name="save_profile_button_text">Save Profile</string>
+    <string name="female_radiobutton_text">Female</string>
+    <string name="male_radiobutton_text">Male</string>
+    <string name="email_edittext_text">Email</string>
+    <string name="surname_edittext_text">Surname</string>
+    <string name="name_edittext_text">Name</string>
+    <string name="profile_picture_imageview_content_description">Profile Picture</string>
+    <string name="edit_profile_button_text">Edit Profile</string>
+    <string name="email">%1$s</string>
+    <string name="birth_date">%1$s</string>
+    <string name="sex">%1$s</string>
+    <string name="general_information">General Information</string>
+</resources>
