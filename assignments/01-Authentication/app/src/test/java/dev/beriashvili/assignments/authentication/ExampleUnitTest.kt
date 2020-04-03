@@ -1,4 +1,4 @@
-package dev.beriashvili.assignment
+package dev.beriashvili.assignments.authentication
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

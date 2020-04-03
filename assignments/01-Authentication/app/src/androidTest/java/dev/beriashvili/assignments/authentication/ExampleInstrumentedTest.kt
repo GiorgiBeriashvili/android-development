@@ -1,4 +1,4 @@
-package dev.beriashvili.assignment
+package dev.beriashvili.assignments.authentication
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("dev.beriashvili.assignment", appContext.packageName)
+        assertEquals("dev.beriashvili.assignments.authentication", appContext.packageName)
     }
 }

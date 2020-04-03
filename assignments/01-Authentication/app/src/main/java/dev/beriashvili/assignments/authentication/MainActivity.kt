@@ -1,4 +1,4 @@
-package dev.beriashvili.assignment
+package dev.beriashvili.assignments.authentication
 
 import android.os.Bundle
 import android.widget.Toast
