@@ -1,4 +1,4 @@
-package dev.beriashvili.bmicalculator
+package dev.beriashvili.practice.bmicalculator
 
 import android.os.Bundle
 import android.view.View

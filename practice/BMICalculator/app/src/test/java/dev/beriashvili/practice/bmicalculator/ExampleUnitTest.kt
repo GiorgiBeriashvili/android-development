@@ -1,4 +1,4 @@
-package dev.beriashvili.bmicalculator
+package dev.beriashvili.practice.bmicalculator
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
