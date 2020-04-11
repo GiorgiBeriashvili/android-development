@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Item List</string>
+    <string name="add_item">Add Item</string>
+    <string name="the_image_of_an_item">The image of an item.</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="creation_date_and_time">Creation Date and Time</string>
+    <string name="change_image">Change Image</string>
+    <string name="title_24_characters">Title (24 characters)</string>
+    <string name="description_128_characters">Description (128 characters)</string>
+    <string name="save_item">Save Item</string>
+</resources>
