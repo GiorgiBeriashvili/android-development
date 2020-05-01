@@ -15,41 +15,45 @@ object DataLoader {
 
     private var service = retrofit.create(ApiRetrofit::class.java)
 
-    fun getRequest(path: String, customCallback: CustomCallback) {
+    fun getRequest(path: String, requestCallback: RequestCallback) {
         val call = service.getRequest(path)
 
-        call.enqueue(callback(customCallback))
+        call.enqueue(callback(requestCallback))
     }
 
-    fun getRequest(root: String, path: String, customCallback: CustomCallback) {
+    fun getRequest(root: String, path: String, requestCallback: RequestCallback) {
         val call = service.getRequest(root, path)
 
-        call.enqueue(callback(customCallback))
+        call.enqueue(callback(requestCallback))
     }
 
-    fun getRequest(path: String, parameters: Map<String, String>, customCallback: CustomCallback) {
+    fun getRequest(
+        path: String,
+        parameters: Map<String, String>,
+        requestCallback: RequestCallback
+    ) {
         val call = service.getRequest(path, parameters)
 
-        call.enqueue(callback(customCallback))
+        call.enqueue(callback(requestCallback))
     }
 
     fun postRequest(
         path: String,
         parameters: MutableMap<String, String>,
-        customCallback: CustomCallback
+        requestCallback: RequestCallback
     ) {
         val call = service.postRequest(path, parameters)
 
-        call.enqueue(callback(customCallback))
+        call.enqueue(callback(requestCallback))
     }
 
-    private fun callback(customCallback: CustomCallback) = object : Callback<String> {
+    private fun callback(requestCallback: RequestCallback) = object : Callback<String> {
         override fun onFailure(call: Call<String>, t: Throwable) {
-            customCallback.onFailed(t.message.toString())
+            requestCallback.onFailed(t.message.toString())
         }
 
         override fun onResponse(call: Call<String>, response: Response<String>) {
-            customCallback.onSuccess(response.body().toString())
+            requestCallback.onSuccess(response.body().toString())
         }
     }
 }

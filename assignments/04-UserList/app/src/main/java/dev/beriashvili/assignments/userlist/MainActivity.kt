@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        DataLoader.getRequest("users", mapOf(Pair("per_page", "12")), object : CustomCallback {
+        DataLoader.getRequest("users", mapOf(Pair("per_page", "12")), object : RequestCallback {
             override fun onFailed(errorMessage: String) {
                 d("error", errorMessage)
             }
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         for (user in users) {
             if (user.id == id) {
-                DataLoader.getRequest("users", id.toString(), object : CustomCallback {
+                DataLoader.getRequest("users", id.toString(), object : RequestCallback {
                     override fun onFailed(errorMessage: String) {
                         d("error", errorMessage)
                     }
