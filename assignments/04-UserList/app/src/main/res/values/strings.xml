@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">User List</string>
+    <string name="user_s_avatar">User\'s Avatar</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="return_text">Return</string>
+</resources>
