@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">User Fragments</string>
+    <string name="swipe_away">Swipe away!</string>
+    <string name="click_on_the_user">Click on the user!</string>
+    <string name="user_s_avatar">User\'s Avatar</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="return_text">Return</string>
+</resources>
