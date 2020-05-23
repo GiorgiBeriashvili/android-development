@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SpaceX Launches</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="registration">Registration</string>
+    <string name="authentication">Authentication</string>
+    <string name="sorting_filter">Sorting Filter</string>
+    <string name="sort_ascending">Sort (Ascending)</string>
+    <string name="launch_picture">Launch Picture</string>
+    <string name="details">Details</string>
+    <string name="return_text">Return</string>
+    <string name="save">Save</string>
+    <string name="query_parameters">Query Parameters</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+</resources>
