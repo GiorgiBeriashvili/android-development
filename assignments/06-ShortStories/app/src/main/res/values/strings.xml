@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Short Stories</string>
+    <string name="title_of_the_story">Title of the Story</string>
+    <string name="add_story">Add Story</string>
+    <string name="add_edit_story">Add/Edit Story</string>
+    <string name="description_128_characters">Description (128 Characters)</string>
+    <string name="title_16_characters">Title (16 Characters)</string>
+</resources>
