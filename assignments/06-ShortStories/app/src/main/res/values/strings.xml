@@ -5,4 +5,5 @@
     <string name="add_edit_story">Add/Edit Story</string>
     <string name="description_128_characters">Description (128 Characters)</string>
     <string name="title_16_characters">Title (16 Characters)</string>
+    <string name="no_stories_yet">No stories yet!</string>
 </resources>

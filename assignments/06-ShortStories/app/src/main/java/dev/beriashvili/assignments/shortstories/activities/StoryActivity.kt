@@ -48,7 +48,7 @@ class StoryActivity : AppCompatActivity() {
                         Story(titleEditText.text.toString(), descriptionEditText.text.toString())
 
                     CoroutineScope(Dispatchers.IO).launch {
-                        db.storyDao().insertAll(story)
+                        db.storyDao().insert(story)
                     }
 
                     setResult(Activity.RESULT_OK)

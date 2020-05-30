@@ -12,13 +12,13 @@ interface StoryDao {
     suspend fun getAll(): MutableList<Story>
 
     @Query("SELECT * FROM story WHERE id = :id")
-    fun getById(id: Int): Story
+    suspend fun getById(id: Int): Story
 
     @Query("SELECT * FROM story ORDER BY id DESC LIMIT 1")
-    fun getLastById(): Story
+    suspend fun getLastById(): Story
 
     @Insert
-    suspend fun insertAll(vararg stories: Story)
+    suspend fun insert(story: Story)
 
     @Delete
     suspend fun delete(story: Story)

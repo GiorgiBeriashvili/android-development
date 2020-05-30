@@ -3,6 +3,7 @@ package dev.beriashvili.assignments.shortstories.activities
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
@@ -14,6 +15,7 @@ import dev.beriashvili.assignments.shortstories.utils.Mode
 import kotlinx.android.synthetic.main.activity_short_stories.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ShortStoriesActivity : AppCompatActivity() {
@@ -39,7 +41,15 @@ class ShortStoriesActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        addStoryButton.setOnClickListener {
+        addStoryButton.setOnClickListener { button ->
+            CoroutineScope(Dispatchers.Main).launch {
+                button.isEnabled = false
+
+                delay(1000)
+
+                button.isEnabled = true
+            }
+
             val intent = Intent(this, StoryActivity::class.java)
 
             intent.putExtra("mode", Mode.ADD)
@@ -49,11 +59,19 @@ class ShortStoriesActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             stories.addAll(db.storyDao().getAll())
+
+            if (stories.isEmpty()) {
+                onEmptyTextView.visibility = View.VISIBLE
+            }
         }
 
-        storyRecyclerView.layoutManager = LinearLayoutManager(this)
-        storyRecyclerViewAdapter = StoryRecyclerViewAdapter(stories, this)
-        storyRecyclerView.adapter = storyRecyclerViewAdapter
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(50)
+
+            storyRecyclerView.layoutManager = LinearLayoutManager(this@ShortStoriesActivity)
+            storyRecyclerViewAdapter = StoryRecyclerViewAdapter(stories, this@ShortStoriesActivity)
+            storyRecyclerView.adapter = storyRecyclerViewAdapter
+        }
     }
 
     fun editStory(id: Int, position: Int) {
@@ -69,10 +87,14 @@ class ShortStoriesActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == ADD_STORY) {
             CoroutineScope(Dispatchers.IO).launch {
+                delay(50)
+
                 val story = db.storyDao().getLastById()
 
                 CoroutineScope(Dispatchers.Main).launch {
                     stories.add(story)
+
+                    onEmptyTextView.visibility = View.GONE
 
                     storyRecyclerViewAdapter.notifyItemInserted(stories.size - 1)
                     storyRecyclerView.scrollToPosition(stories.size - 1)
@@ -100,5 +122,9 @@ class ShortStoriesActivity : AppCompatActivity() {
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    fun onEmpty() {
+        onEmptyTextView.visibility = View.VISIBLE
     }
 }

@@ -11,6 +11,7 @@ import dev.beriashvili.assignments.shortstories.entities.Story
 import kotlinx.android.synthetic.main.story_recyclerview_layout.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class StoryRecyclerViewAdapter(
@@ -50,6 +51,14 @@ class StoryRecyclerViewAdapter(
 
                     CoroutineScope(Dispatchers.IO).launch {
                         origin.db.storyDao().delete(story)
+                    }
+
+                    if (origin.stories.isEmpty()) {
+                        CoroutineScope(Dispatchers.Main).launch {
+                            delay(250)
+
+                            origin.onEmpty()
+                        }
                     }
 
                     true
