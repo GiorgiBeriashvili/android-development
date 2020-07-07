@@ -1,0 +1,3 @@
+[submodule "exams/lovecraft-library"]
+	path = exams/lovecraft-library
+	url = https://github.com/GiorgiBeriashvili/lovecraft-library
